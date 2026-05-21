@@ -8,8 +8,8 @@ on:
   workflow_dispatch: # เปิดให้เราสามารถกดคลิกเพื่อสั่งรันเทสเองแบบ Manual ได้ด้วย
 
 jobs:
-  run-screener:
-  runs-index: ubuntu-latest
+   run-script:
+    runs-on: ubuntu-latest
 
   steps:
   - name: Checkout repository code
