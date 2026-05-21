@@ -87,7 +87,7 @@ def scan_market():
         ema_200 = current_row['EMA_200']
         
         # เงื่อนไขระบบของคุณ: เหนือ EMA200 + RSI <= 32
-        if current_price > ema_200 and rsi <= 32:
+        if current_price > ema_200 and rsi <= 45:
             entry_min = round(current_price * 0.97, 2)
             entry_max = round(current_price * 1.00, 2)
             target_profit = round(current_price * 1.10, 2)
