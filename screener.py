@@ -12,12 +12,16 @@ COINS = ["BTC", "ETH", "BNB", "SOL", "XRP", "ADA", "FLOKI", "SHIB", "OP", "DOGE"
 
 def send_line_message(text_msg):
     url = "https://api.line.me/v2/bot/message/push"
+    
+    # เพิ่มความชัวร์ด้วยการล้างช่องว่าง (Strip) เผื่อมี Space ติดมาจาก GitHub Secrets
+    token = str(LINE_ACCESS_TOKEN).strip() if LINE_ACCESS_TOKEN else ""
+    
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {LINE_ACCESS_TOKEN}"
+        "Authorization": f"Bearer {token}"  # ตรวจสอบให้มั่นใจว่าสะกดคำว่า Bearer เว้นวรรค 1 ที ถูกต้อง
     }
     payload = {
-        "to": LINE_USER_ID,
+        "to": str(LINE_USER_ID).strip(),
         "messages": [{"type": "text", "text": text_msg}]
     }
     try:
@@ -25,10 +29,12 @@ def send_line_message(text_msg):
         if response.status_code == 200:
             print("Signal sent via Messaging API Successfully.")
         else:
+            # พิมพ์ตรวจสอบ Headers ออกมาดูหากพังอีกครั้งเพื่อความง่ายในการเช็ค
             print(f"Failed to send LINE message: {response.text}")
+            print(f"Debug Info - Token Length: {len(token)}, UserID Length: {len(payload['to'])}")
     except Exception as e:
         print(f"Error sending LINE message: {e}")
-
+        
 def get_historical_data(coin):
     url = "https://min-api.cryptocompare.com/data/v2/histohour"
     params = {
