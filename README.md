@@ -1,2 +1,2 @@
-# crypto_report
-crypto_report
+# Coindesk crypto_report
+Coindesk (cryptocompare) crypto report
