@@ -1,4 +1,4 @@
-name: Crypto Market Screener
+name: Coindesk Crypto Screener
 
 on:
   schedule:
