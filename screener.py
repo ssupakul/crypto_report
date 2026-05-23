@@ -8,7 +8,7 @@ LINE_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
 LINE_USER_ID = os.getenv("LINE_USER_ID")
 CRYPTOCOMPARE_API_KEY = os.getenv("CRYPTOCOMPARE_API_KEY")
 
-COINS = ["BTC", "ETH", "BNB", "SOL", "XRP", "ADA", "FLOKI", "SHIB", "OP", "DOGE", "NEAR"]
+COINS = ["BTC", "ETH", "BNB", "SOL", "XRP", "ADA", "EIGEN", "FLOKI", "SHIB", "OP", "DOGE", "NEAR"]
 STATE_FILE = "screener_state.json"
 
 # ----------------------------------------------------
