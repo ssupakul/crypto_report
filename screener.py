@@ -7,7 +7,7 @@ LINE_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
 LINE_USER_ID = os.getenv("LINE_USER_ID")
 CRYPTOCOMPARE_API_KEY = os.getenv("CRYPTOCOMPARE_API_KEY")
 
-COINS = ["BTC", "ETH", "BNB", "SOL", "XRP", "ADA", "FLOKI", "SHIB", "OP", "DOGE", "NEAR"]
+COINS = ["BTC", "ETH", "BNB", "SOL", "XRP", "ADA", "FLOKI", "EIGEN", "SHIB", "OP", "DOGE", "NEAR"]
 
 def send_line_message(text_msg):
     url = "https://api.line.me/v2/bot/message/push"
@@ -128,7 +128,7 @@ def scan_market():
         # 🟢 ฝั่งที่ 1: สัญญาณซื้อ (Buy Setup)
         if current_price > ema_200:
             signal_type = ""
-            if current_price > (ema_50 * 0.98) and rsi <= 32:
+            if current_price > (ema_50 * 0.98) and rsi <= 35:
                 signal_type = "RSI Oversold + Pullback 📉"
             elif is_divergence:
                 signal_type = "Bullish Divergence 📈"
@@ -152,7 +152,7 @@ def scan_market():
                 })
         
         # 🔴 ฝั่งที่ 2: สัญญาณเตือนขาย (Sell/Take Profit Setup)
-        if rsi >= 70:
+        if rsi >= 65:
             tp_range_min = format_price(coin, current_price * 1.00)
             tp_range_max = format_price(coin, current_price * 1.05)
             
