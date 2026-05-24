@@ -177,7 +177,7 @@ if __name__ == "__main__":
     
     # 1. ส่งแจ้งเตือนถ้าเจอสัญญาณช้อนซื้อ
     if buy_list:
-        message_buy = "🎯 [Crypto Screener 4H - สัญญาณช้อนซื้อ]"
+        message_buy = "🎯 [Coindesk Crypto Screener 4H - สัญญาณช้อนซื้อ]"
         for opt in buy_list:
             message_buy += f"\n\n🪙 เหรียญ: {opt['coin']}"
             message_buy += f"\n🚨 รูปแบบ: {opt['type']}"
@@ -191,7 +191,7 @@ if __name__ == "__main__":
         
     # 2. ส่งแจ้งเตือนถ้าเจอเหรียญที่เข้าโซนต้องระวังขายทำกำไร (Overbought)
     if sell_list:
-        message_sell = "⚠️ [Crypto Screener 4H - เตือนโซน Overbought]"
+        message_sell = "⚠️ [Coindesk Crypto Screener 4H - เตือนโซน Overbought]"
         message_sell += "\nคำแนะนำ: ราคาวิ่งแรงเกินไป ควรพิจารณาแบ่งขายทำกำไร"
         for opt in sell_list:
             message_sell += f"\n\n🪙 เหรียญ: {opt['coin']}"
