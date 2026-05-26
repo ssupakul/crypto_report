@@ -156,7 +156,7 @@ def scan_market():
                 })
         
         # 🔴 ฝั่งที่ 2: สัญญาณเตือนขาย (Sell/Take Profit Setup)
-        if rsi >= 70:
+        if rsi >= 65:
             tp_range_min = format_price(coin, current_price * 1.00)
             tp_range_max = format_price(coin, current_price * 1.05)
             
